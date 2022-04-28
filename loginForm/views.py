@@ -42,12 +42,18 @@ def signin(request,good=False):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        user = User.objects.create_user(username=username, password=password,email=email)
-        if user is not None:
-            return redirect('home')
-        else:
+        cpassword = request.POST['cpassword']
+        if cpassword != password:
+            error='Les mots de passes ne correspondent pas'
             good = True
             return render(request,"signin.html",locals())
+        else:
+            user = User.objects.create_user(username=username, password=password,email=email)
+            if user is not None:
+                return redirect('home')
+            else:
+                good = True
+                return render(request,"signin.html",locals())
     except KeyError:
         return render(request,"signin.html",locals())
     except ValueError as e:
