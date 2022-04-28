@@ -86,7 +86,7 @@ hr{
     color: var(--subtext-color);
 }
 .login-contain *{
-    margin: 8px;
+    margin: 5px;
 }
 
 .button{

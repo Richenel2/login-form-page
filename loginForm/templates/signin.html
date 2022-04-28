@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+    <div class="image-container container">
+    </div>
     <div class="login-container container">
         <nav>
             <div class="brands-container">
@@ -18,12 +20,12 @@
             </div>
             <div class="signin-question">
                 <span>Vous avez deja un compte?</span>
-                <a href="{% url 'login' %}">inscrivez vous</a>
+                <a href="{% url 'login' %}">Connectez vous</a>
             </div>
         </nav>
         <div class="login-contain">
-            <h1>Heureux de vous revoir</h1>
-            <p>Connectez vous a votre compte</p>
+            <h1>Creer votre compte</h1>
+            <p>Creer le avec</p>
             <div class="button-connection">
                 <div class="button">
                     <img src="{% static 'image/google 1.png' %}" alt="">
@@ -39,10 +41,12 @@
                 <span>ou continuer avec</span>
                 <div><hr></div>
             </div>
-            <form action="login" method="post">
+            <form action="signin" method="post">
                 {% csrf_token %}
                 <input type="text" name="username" id="username" placeholder="username">
+                <input type="email" name="email" id="email" placeholder="email">
                 <input type="password" name="password" id="password" placeholder="password">
+                <input type="cpassword" name="cpassword" id="cpassword" placeholder="confirm password">
                 <div class="other container">
                     <div class="swith">
                         <input type="checkbox" name="remember" id="">
@@ -50,15 +54,13 @@
                     </div>
                     {% if good %}
                         <div class="error">
-                            Cet utilisateur n'existe pas
+                           {{ error }}
                         </div>
                     {% endif %}
                 </div>
-                <input type="submit" value="Login" class="login-button">
+                <input type="submit" value="SignIn" class="login-button">
             </form>
         </div>
-    </div>
-    <div class="image-container container">
     </div>
 </body>
 </html>
