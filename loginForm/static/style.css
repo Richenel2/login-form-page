@@ -1,0 +1,137 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("fonts/Poppins/Poppins-Regular.ttf");
+}
+:root{
+    --background-color: #F0F2F5;
+    --button-color: #5A5A5A;
+    --text-color: #000000;
+    --line-color: #DBDBDB;
+    --green-color: #20DC49;
+    --error-color: #D93F21;
+    --icon-color: #B8B8B8;
+    --subtext-color: #7E7E7E;
+    --white-color: #FFFFFF;
+}
+*,::after,::before{
+    padding:0px;
+    margin: 0px;
+    font-family: 'Poppins';
+    transition: all .3s ease-in-out;
+    color: var(--text-color);
+}
+body{
+    background-color: var(--background-color);
+    display: flex;
+    font-size: 12px;
+}
+nav{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a{
+    color: var(--green-color);
+    text-decoration: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    border: none;
+    padding: 15px;
+    outline: none;
+}
+hr{
+    color: var(--line-color);
+}
+.container{
+    display: flex;
+}
+.login-container{
+    flex: 1;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+.image-container{
+    background-image: url('image/linkedin-sales-solutions-B_DJO2-K22M-unsplash 1.png') ;
+    width: 40vw;
+    background-attachment: fixed;
+    height: 100vh;
+}
+.brands-container{
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.brands-container *{
+    margin: 5px;
+}
+
+.login-contain{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-contain p{
+    color: var(--subtext-color);
+}
+.login-contain *{
+    margin: 8px;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    background-color: var(--white-color);
+    font-weight: 600;
+    border-radius: 5px;
+    border: 1px solid var(--white-color);
+    cursor: pointer;
+}
+
+.button:hover{
+    border: 1px solid var(--green-color);
+}
+.button-connection,.separator{
+    display: flex;
+}
+
+.separator div{
+    width: 120px;
+}
+
+.login-button{
+    background-color: none;
+    border: 1px solid var(--button-color);
+    color: var(--button-color);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.login-button:hover{
+    background-color: var(--green-color);
+    border-color: transparent;
+    color: var(--text-color);
+}
+
+.error {
+    color: var(--error-color);
+}
+
+.other{
+    align-items: center;
+}

@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="login-container container">
+        <nav>
+            <div class="brands-container">
+                <img src="{% static 'image/Group 433.png' %}" alt="" width="20px">
+                <span>Centre d'Excellence</span>
+            </div>
+            <div class="signin-question">
+                <span>Vous n'avez pas de compte?</span>
+                <a href="{% url 'signin' %}">inscrivez vous</a>
+            </div>
+        </nav>
+        <div class="login-contain">
+            <h1>Heureux de vous revoir</h1>
+            <p>Connectez vous a votre compte</p>
+            <div class="button-connection">
+                <div class="button">
+                    <img src="{% static 'image/google 1.png' %}" alt="">
+                    <span>Google</span>
+                </div>
+                <div class="button">
+                    <img src="{% static 'image/Group.png' %}" alt="">
+                    <span>facebook</span>
+                </div>
+            </div>
+            <div class="separator">
+                <div><hr></div>
+                <span>ou continuer avec</span>
+                <div><hr></div>
+            </div>
+            <form action="login" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="username">
+                <input type="password" name="password" id="password" placeholder="password">
+                <div class="other container">
+                    <div class="swith">
+                        <input type="checkbox" name="remember" id="">
+                        <span>Remember me</span>
+                    </div>
+                    {% if good %}
+                        <div class="error">
+                            Cet utilisateur n'existe pas
+                        </div>
+                    {% endif %}
+                </div>
+                <input type="submit" value="Login" class="login-button">
+            </form>
+        </div>
+    </div>
+    <div class="image-container container">
+    </div>
+</body>
+</html>
